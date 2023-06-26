@@ -1,0 +1,26 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.text-heading-h1{
+    @apply text-black-primary text-[48px] leading-[48px] font-medium;
+}
+
+
+
+
+.text-heading-h2{
+    @apply text-black-primary text-[40px] leading-[48px] font-medium tracking-[2px];
+}
+
+.text-heading-h3 {
+    @apply text-black-primary text-[20px] leading-[26px] font-medium tracking-[5px];
+}
+
+.text-heading-p {
+    @apply text-black-primary text-[16px] leading-[26px] font-normal ;
+}
