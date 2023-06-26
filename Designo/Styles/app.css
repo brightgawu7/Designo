@@ -6,6 +6,11 @@
 
 
 
+body{
+    background-color:#E7816B;
+    padding:10vh;
+}
+
 .text-heading-h1{
     @apply text-black-primary text-[48px] leading-[48px] font-medium;
 }
@@ -23,4 +28,11 @@
 
 .text-heading-p {
     @apply text-black-primary text-[16px] leading-[26px] font-normal ;
+}
+.btn-dark {
+    @apply text-black-primary hover:text-white-primary text-[15px] font-medium bg-white-primary hover:bg-peach-secondary cursor-pointer px-[20px] py-[15px] rounded-[7px] ;
+}
+
+.btn-light {
+    @apply text-white-primary text-[15px] font-medium bg-white-primary hover:bg-peach-secondary cursor-pointer px-[20px] py-[15px] rounded-[7px];
 }
