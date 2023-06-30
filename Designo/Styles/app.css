@@ -24,7 +24,7 @@
 
 .heading-h2 {
 
-    @apply font-jost font-medium text-[2.5rem] leading-[3rem] tracking-[0.125rem];
+    @apply font-jost font-medium text-[2.5rem] leading-[2.5rem] tracking-[0.125rem];
 }
 
 
@@ -52,7 +52,7 @@
 }
 
 .body-p {
-    @apply font-jost font-normal text-[1rem] leading-[1.625rem];
+    @apply font-jost font-normal text-[1rem] tracking-[0.1rem] leading-[1.625rem];
 }
 
 
@@ -64,7 +64,7 @@
 }
 
 .dark-btn {
-    @appy font-jost font-medium inline-block text-[1rem] text-black-primary hover:text-white-primary bg-white-primary hover:bg-peach-secondary px-[1.25rem] py-[0.8rem] rounded-[0.5rem] cursor-pointer;
+    @apply font-jost font-medium inline-block text-[1rem] text-black-primary hover:text-white-primary bg-white-primary hover:bg-peach-secondary px-[1.25rem] py-[0.8rem] rounded-[0.5rem] cursor-pointer;
 }
 
 
@@ -80,4 +80,19 @@
 
 .light-btn {
     @apply font-jost font-medium inline-block text-[1rem] text-white-primary bg-white-primary hover:bg-peach-secondary px-[1.25rem] py-[0.8rem] rounded-[0.5rem] cursor-pointer;
+}
+
+
+
+.footer-link{
+    @apply font-jost font-medium text-[1.2rem] leading-[1.625rem] text-white-primary/60;
+}
+
+.footer-link-p{
+
+    @apply font-jost font-normal text-[1rem] leading-[1.2rem] text-white-primary;
+}
+
+.footer-image{
+    @apply w-[20px];
 }

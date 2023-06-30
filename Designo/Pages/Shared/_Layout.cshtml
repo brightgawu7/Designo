@@ -1,7 +1,4 @@
 ﻿@using System.Collections;
-
-
-
 @{
 	var PageName = ViewData["Title"];
 	var navLinks = new[]
@@ -9,13 +6,11 @@
 		new {Name = "OUR COMPANY", Link = "/About"},
 		new {Name = "LOCATIONS", Link = "/Locations"},
 
-		new {Name = "CONTACT", Link = "/Contact"}
+		new {Name = "CONTACT", Link = "/Contact"},
+
 
 	}.ToList();
 }
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,10 +26,10 @@
 
 
 </head>
-<body class="w-full">
+<body class="w-full ">
 
 	<header class="w-full bg-white-primary fixed overflow-hidden  z-10">
-		<div class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[100px] flex flex-wrap flex-row justify-between items-center ">
+		<div class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[80px] flex flex-wrap flex-row justify-between items-center ">
 			<a class="cursor-pointer" asp-page="/Index">
 				<img src="~/assets/shared/desktop/logo-dark.png" alt="logo" class="h-[1.5rem]" />
 			</a>
@@ -58,110 +53,138 @@
 		</div>
 	</header>
 
-	<main class="w-full  max-w-screen-largeDesktop tablet:w-[90%]  mx-auto overflow-hidden">
+
+
+
+	<main class="w-full max-w-screen-largeDesktop tablet:w-[90%]  mx-auto overflow-hidden">
 
 
 	</main>
 
 
 
+
+
+
+
+
+
 	<main class="w-full">
-		<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[110px] ">
+		<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[80px] ">
 
 			@RenderBody()
 
 
 
 		</div>
+	</main>
 
 
-		<footer class="w-full  ">
 
 
+	<footer class="w-full">
+
+
+		@if (PageName?.ToString() != "Contact")
+		{
+
+			<div class="w-[90%] mx-auto max-w-screen-largeDesktop  flex flex-col tablet:flex-row flex-wrap gap-10 items-center justify-between bg-peach-primary/90	 relative top-[140px] z-[4] rounded-[5px] bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')]  bg-no-repeat  bg-cover bg-center py-[2rem] px-[1rem] tablet:p-[4rem]">
+
+
+
+
+				<div class="text-center tablet:text-left tablet:w-[50%] ">
+					<h2 class="heading-h2 text-white-primary">Let’s talk about your project</h2>
+					<p class="body-p text-white-primary mt-[1.5rem]">Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.</p>
+				</div>
+
+
+				<div class="text-center tablet:text-right">
+					<a class="dark-btn" asp-page="/Contact" >GET IN TOUCH</a>
+
+				</div>
+
+
+			</div>
+		}
+
+
+
+		<div class="w-full relative z-[2]  bg-black-primary mx-auto overflow-hidden pb-[2rem] ">
 			@if (PageName?.ToString() != "Contact")
 			{
-				<div class="w-[90%] max-w-screen-xl xl:w-[100%]   flex flex-col lg:flex-row flex-wrap gap-10 items-center justify-around  mx-auto bg-peach-primary/90	 relative top-[100px]   z-[4] rounded-[5px] bg-no-repeat  bg-cover bg-center py-[50px]  "
-					 style="background-image:linear-gradient(to left top,rgba(231, 129, 107,0.6) ,rgba(231, 129, 107,0.6	)
-						), url( '/assets/shared/desktop/bg-pattern-call-to-action.svg'); ">
-					<div class="text-center lg:text-left w-[90%]	sm:w-[70%] lg:w-[40%]	">
-						<h2 class="text-heading-h2 text-white-primary ">Let’s talk about your project</h2>
-						<p class="text-body-p text-white-primary mt-[20px]">Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.</p>
-					</div>
-					<div class="lg:w-[40%]  text-center">
-						<a class="inline-block btn-dark ">GET IN TOUCH</a>
-
-					</div>
-				</div>
+				<div class="py-[80px]"></div>
 			}
+			<div class="w-[90%] max-w-screen-largeDesktop mx-auto">
+
+				<div class="w-full flex flex-wrap flex-col tablet:flex-row items-center justify-between  tablet:border-b-2 border-primary-black/40  py-[1rem] ">
+
+
+					<div class="w-full tablet:w-auto items-center border-b-2 border-primary-black/40 tablet:border-none pb-[1rem]  tablet:p-[0]">
+						<a class="cursor-pointer" asp-page="/Index">
+							<img src="~/assets/shared/desktop/logo-light.png" alt="logo" class="h-[30px] mx-auto tablet:mx-0" />
+						</a>
+					</div>
+
+					<ul class="text-white-primary flex flex-wrap flex-col justify-between tablet:flex-row items-center gap-6 body-p text-white-primary mt-[1rem] tablet:m-[0]">
+						@foreach (var navLink in navLinks)
+						{
+							<li>
+								<a class="sm:hover:underline" asp-page=@navLink.Link>@navLink.Name</a>
+							</li>
+						}
+					</ul>
 
 
 
-
-			<div class="w-full bg-black-primary mx-auto relative z-[2] text-white-primary pt-[140px] pb-[40px] ">
-				<div class="w-[90%] max-w-screen-xl xl:w-[100%]   mx-auto">
-					<div class="w-full flex flex-wrap flex-col items-center  items-center justify-between sm:flex-row  sm:border-white-primary/40 sm:border-b-2 sm:pb-[20px] ">
+				</div>
 
 
-						<div class="w-full sm:w-[30%] pb-[20px]  items-center   sm:pb-0 sm:border-none border-white-primary/40 border-b-2 ">
-							<a class="cursor-pointer" asp-page="/Index">
-								<img src="~/assets/shared/desktop/logo-light.png" alt="logo" class="h-[30px] mx-auto sm:mx-0" />
-							</a>
-						</div>
+				<div class="flex flex-col tablet:flex-row justify-between flex-wrap items-center gap-12 tablet:mt-[1rem]">
+					<div class="text-center tablet:text-left flex flex-col flex-wrap gap-2">
+						<p class="footer-link">Designo Central Office</p>
+						<p class="footer-link-p">3886 Wellington Street</p>
+						<p class="footer-link-p">Toronto, Ontario M9C 3J5</p>
+					</div>
+					<div class="text-center tablet:text-left flex flex-col flex-wrap gap-2 ">
+						<p class="footer-link">Contact Us (Central Office)</p>
+						<p class="footer-link-p">P : +1 253-863-8967</p>
+						<p class="footer-link-p">M : contact@designo.co</p>
+					</div>
 
+					<div class="flex flex-row justify-between flex-wrap gap-4 tablet:self-end">
+						<a href="/">
+							<img src="~/assets/shared/desktop/icon-facebook.svg" alt="logo" class="footer-image" />
 
-						<ul class="w-full sm:w-[60%] lg:w-[40%] text-white-primary flex flex-wrap flex-col justify-between   sm:flex-row items-center gap-4 mt-[20px] sm:mt-0 font-normal text-white-primary text-[15px] tracking-[2px]
+						</a>
+						<a href="/">
+							<img src="~/assets/shared/desktop/icon-youtube.svg" alt="logo" class=" footer-image" />
 
-									">
-							@foreach (var navLink in navLinks)
-							{
-								<li>
-									<a class="sm:hover:underline" asp-page=@navLink.Link>@navLink.Name</a>
-								</li>
-							}
-						</ul>
+						</a>
+						<a href="/">
+							<img src="~/assets/shared/desktop/icon-twitter.svg" alt="logo" class=" footer-image" />
 
+						</a>
+						<a href="/">
+							<img src="~/assets/shared/desktop/icon-pinterest.svg" alt="logo" class="footer-image" />
+
+						</a>
+						<a href="/">
+							<img src="~/assets/shared/desktop/icon-instagram.svg" alt="logo" class="footer-image" />
+
+						</a>
 
 					</div>
-					<div class="flex flex-col justify-between sm:flex-row flex-wrap gap-6 mt-[40px] items-center">
-						<div class="text-center sm:text-left">
-							<p class="text-[17px] leading-[26px] font-medium text-white-primary">Designo Central Office</p>
-							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">3886 Wellington Street</p>
-							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">Toronto, Ontario M9C 3J5</p>
-						</div>
-						<div class="text-center sm:text-left">
-							<p class="text-[17px] leading-[26px] font-medium text-white-primary">Contact Us (Central Office)</p>
-							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">P : +1 253-863-8967</p>
-							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">M : contact@designo.co</p>
-						</div>
-						<div class="flex flex-row justify-between flex-wrap gap-4 sm:self-end">
-							<a href="/">
-								<img src="~/assets/shared/desktop/icon-facebook.svg" alt="logo" class=" w-[20px]" />
 
-							</a>
-							<a href="/">
-								<img src="~/assets/shared/desktop/icon-youtube.svg" alt="logo" class=" w-[20px]" />
-
-							</a>
-							<a href="/">
-								<img src="~/assets/shared/desktop/icon-twitter.svg" alt="logo" class=" w-[20px]" />
-
-							</a>		<a href="/">
-								<img src="~/assets/shared/desktop/icon-pinterest.svg" alt="logo" class=" w-[20px]" />
-
-							</a>		<a href="/">
-								<img src="~/assets/shared/desktop/icon-instagram.svg" alt="logo" class=" w-[20px]" />
-
-							</a>
-
-						</div>
-
-					</div>
 				</div>
 
 			</div>
+		</div>
+	</footer>
 
-		</footer>
-	</main>
+
+
+
 
 
 
