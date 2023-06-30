@@ -31,21 +31,17 @@
 
 
 </head>
-<body class="w-screen" >
-	<header class="w-full fixed bg-white-primary z-10">
-		<div class="w-[90%] h-[100px] max-w-screen-xl xl:w-[100%] mx-auto flex flex-wrap flex-wrap flex-row justify-between items-center">
+<body class="w-full">
 
+	<header class="w-full bg-white-primary fixed overflow-hidden  z-10">
+		<div class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[100px] flex flex-wrap flex-row justify-between items-center ">
 			<a class="cursor-pointer" asp-page="/Index">
-				<img src="~/assets/shared/desktop/logo-dark.png" alt="logo" class="h-[24px]" />
+				<img src="~/assets/shared/desktop/logo-dark.png" alt="logo" class="h-[1.5rem]" />
 			</a>
 
-			<div class="nav-list fixed bg-black-primary/40 w-full top-[80px] left-[-200px] opacity-0 h-[100vh]
-					sm:relative  sm:w-auto  sm:left-[0] sm:top-[0] sm:opacity-100 sm:h-auto z-10
-					">
-				<ul class="flex flex-wrap flex-col py-[30px] px-[20px] gap-6 font-jost font-normal text-white-primary text-[24px] tracking-[2px]  bg-black-primary
-						sm:flex-row  sm:py-[0] sm:px-[0] sm:gap-6  sm:text-black-primary  sm:text-[14px] sm:tracking-[1px]  sm:bg-white-primary
+			<div class="nav-list w-full tablet:w-auto h-[100vh] bg-black-primary/40 tablet:h-auto tablet:opacity-100 fixed tablet:relative  top-[80px] left-[-200px] tablet:top-[0] tablet:left-[0]	opacity-0 ">
 
-				">
+				<ul class="flex flex-wrap flex-col tablet:flex-row gap-4 tablet:gap-12 py-[30px] px-[20px] tablet:p-[0] body-p text-white-primary tablet:text-black-primary bg-black-primary tablet:bg-white-primary">
 
 					@foreach (var navLink in navLinks)
 					{
@@ -53,15 +49,21 @@
 							<a class="sm:hover:underline" asp-page=@navLink.Link>@navLink.Name</a>
 						</li>
 					}
-
 				</ul>
 			</div>
 
-			<div class="text-[30px] cursor-pointer mx-2 sm:hidden block">
+			<div class="text-[30px] cursor-pointer tablet:hidden block">
 				<ion-icon name="menu" onclick="Menu(this)"></ion-icon>
 			</div>
 		</div>
 	</header>
+
+	<main class="w-full  max-w-screen-largeDesktop tablet:w-[90%]  mx-auto overflow-hidden">
+
+
+	</main>
+
+
 
 	<main class="w-full">
 		<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[110px] ">
