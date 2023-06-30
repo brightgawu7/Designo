@@ -37,7 +37,7 @@
 }
 
 .heading-h3 {
-    @apply font-jost font-medium text-[1.25rem] leading-[1.625rem] tracking-[0.3125rem];
+    @apply font-jost font-medium text-[1.25rem] leading-[1.625rem] tracking-[0.15rem];
 }
 
 

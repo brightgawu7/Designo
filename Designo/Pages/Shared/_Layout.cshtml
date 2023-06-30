@@ -18,7 +18,7 @@
 	<meta charset="utf-8" />
 	<link rel="icon" href="~/assets/favicon-32x32.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@PageName ~ Designo</title>
+	<title>Designo ~ @PageName</title>
 	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -26,7 +26,7 @@
 
 
 </head>
-<body class="w-full ">
+<body class="w-full">
 
 	<header class="w-full bg-white-primary fixed overflow-hidden  z-10">
 		<div class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[80px] flex flex-wrap flex-row justify-between items-center ">
@@ -56,9 +56,9 @@
 
 
 
-	<main class="w-full max-w-screen-largeDesktop tablet:w-[90%]  mx-auto overflow-hidden">
+	<main class="w-full max-w-screen-largeDesktop tablet:w-[90%] pt-[80px]  mx-auto overflow-hidden">
 
-
+		@RenderBody()
 	</main>
 
 
@@ -69,15 +69,15 @@
 
 
 
-	<main class="w-full">
-		<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[80px] ">
+	@*	<main class="w-full">
+	<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[80px] ">
 
-			@RenderBody()
+	@RenderBody()
 
 
 
-		</div>
-	</main>
+	</div>
+	</main>*@
 
 
 
@@ -100,7 +100,7 @@
 
 
 				<div class="text-center tablet:text-right">
-					<a class="dark-btn" asp-page="/Contact" >GET IN TOUCH</a>
+					<a class="dark-btn" asp-page="/Contact">GET IN TOUCH</a>
 
 				</div>
 
@@ -181,10 +181,6 @@
 			</div>
 		</div>
 	</footer>
-
-
-
-
 
 
 
