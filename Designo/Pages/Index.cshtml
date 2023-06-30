@@ -21,39 +21,36 @@
 
 
 
-<div class="w-[90%] xl:w-[100%] mx-auto my-[10vh] flex flex-wrap flex-col lg:justify-between gap-2 lg:flex-row ">
 
-	<a class="block w-full lg:w-[49%] overflow-hidden  rounded-[5px]  bg-no-repeat  bg-cover bg-center" asp-page="/WebDesign"
-	   style="background-image: url( '/assets/home/desktop/image-web-design-small.jpg');">
-		<div class="w-full  h-[250px] lg:h-[510px] bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center ">
-			<h2 class="text-heading-h2 text-white-primary ">WEB DESIGN</h2>
-			<p class="text-body-p text-white-primary tracking-[2px]">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
+<div class="w-[90%] tablet:w-full mx-auto my-[10vh] overflow-hidden grid desktop:grid-rows-2 desktop:grid-cols-2 gap-4 ">
+	<a class="desktop:row-span-2  block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-web-design-small.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/WebDesign">
+	 
+		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] desktop:h-full">
+			<h2 class="heading-h2 text-white-primary">WEB DESIGN</h2>
+			<p class="body-p text-white-primary">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
 		</div>
 
 	</a>
-	<div class="w-full lg:w-[49%]  flex flex-col justify-between gap-2 lg:gap-auto ">
 
-		<a class="w-full overflow-hidden  rounded-[5px]  bg-no-repeat  bg-cover bg-center   block" asp-page="/AppDesign"
-		   style="background-image: url( '/assets/home/desktop/image-app-design.jpg');">
-			<div class="w-full  bg-black-primary/50 hover:bg-peach-primary/70 h-[250px] flex flex-col gap-2 justify-center items-center ">
-				<h2 class="text-heading-h2 text-white-primary ">APP DESIGN</h2>
-				<p class="text-body-p text-white-primary tracking-[2px]">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
-			</div>
+	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-app-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/AppDesign">
 
-		</a>
+		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem]">
+			<h2 class="heading-h2 text-white-primary">APP DESIGN</h2>
+			<p class="body-p text-white-primary">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
+		</div>
 
-		<a class="w-full overflow-hidden  rounded-[5px]  bg-no-repeat  bg-cover bg-center  block" asp-page="/GraphicDesign"
-		   style="background-image: url( '/assets/home/desktop/image-graphic-design.jpg');">
-			<div class="w-full  bg-black-primary/50 hover:bg-peach-primary/70 h-[250px] flex flex-col gap-2 justify-center items-center ">
-				<h2 class="text-heading-h2 text-white-primary ">GRAPHIC DESIGN</h2>
-				<p class="text-body-p text-white-primary tracking-[2px]">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
-			</div>
+	</a>
 
-		</a>
-	</div>
+	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-graphic-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/GraphicDesign">
 
+		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem]">
+			<h2 class="heading-h2 text-white-primary">GRAPHIC DESIGN</h2>
+			<p class="body-p text-white-primary">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
+		</div>
 
+	</a>
 </div>
+
 
 
 <div class="w-[90%] xl:w-[100%] gap-20 mx-auto flex flex-wrap flex-col lg:justify-between lg:gap-0 lg:flex-row ">
