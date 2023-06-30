@@ -1,16 +1,175 @@
-﻿<!DOCTYPE html>
+﻿@using System.Collections;
+
+
+
+@{
+	var PageName = ViewData["Title"];
+	var navLinks = new[]
+	{
+		new {Name = "OUR COMPANY", Link = "/About"},
+		new {Name = "LOCATIONS", Link = "/Locations"},
+
+		new {Name = "CONTACT", Link = "/Contact"}
+
+	}.ToList();
+}
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="~/assets/favicon-32x32.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] ~ Designo</title>
+	<title>@PageName ~ Designo</title>
 	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </head>
-<body>
-	<header>
+<body class="w-screen" >
+	<header class="w-full fixed bg-white-primary z-10">
+		<div class="w-[90%] h-[100px] max-w-screen-xl xl:w-[100%] mx-auto flex flex-wrap flex-wrap flex-row justify-between items-center">
+
+			<a class="cursor-pointer" asp-page="/Index">
+				<img src="~/assets/shared/desktop/logo-dark.png" alt="logo" class="h-[24px]" />
+			</a>
+
+			<div class="nav-list fixed bg-black-primary/40 w-full top-[80px] left-[-200px] opacity-0 h-[100vh]
+					sm:relative  sm:w-auto  sm:left-[0] sm:top-[0] sm:opacity-100 sm:h-auto z-10
+					">
+				<ul class="flex flex-wrap flex-col py-[30px] px-[20px] gap-6 font-jost font-normal text-white-primary text-[24px] tracking-[2px]  bg-black-primary
+						sm:flex-row  sm:py-[0] sm:px-[0] sm:gap-6  sm:text-black-primary  sm:text-[14px] sm:tracking-[1px]  sm:bg-white-primary
+
+				">
+
+					@foreach (var navLink in navLinks)
+					{
+						<li>
+							<a class="sm:hover:underline" asp-page=@navLink.Link>@navLink.Name</a>
+						</li>
+					}
+
+				</ul>
+			</div>
+
+			<div class="text-[30px] cursor-pointer mx-2 sm:hidden block">
+				<ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+			</div>
+		</div>
 	</header>
-	@RenderBody()
+
+	<main class="w-full">
+		<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[110px] ">
+
+			@RenderBody()
+
+
+
+		</div>
+
+
+		<footer class="w-full  ">
+
+
+			@if (PageName?.ToString() != "Contact")
+			{
+				<div class="w-[90%] max-w-screen-xl xl:w-[100%]   flex flex-col lg:flex-row flex-wrap gap-10 items-center justify-around  mx-auto bg-peach-primary/90	 relative top-[100px]   z-[4] rounded-[5px] bg-no-repeat  bg-cover bg-center py-[50px]  "
+					 style="background-image:linear-gradient(to left top,rgba(231, 129, 107,0.6) ,rgba(231, 129, 107,0.6	)
+						), url( '/assets/shared/desktop/bg-pattern-call-to-action.svg'); ">
+					<div class="text-center lg:text-left w-[90%]	sm:w-[70%] lg:w-[40%]	">
+						<h2 class="text-heading-h2 text-white-primary ">Let’s talk about your project</h2>
+						<p class="text-body-p text-white-primary mt-[20px]">Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.</p>
+					</div>
+					<div class="lg:w-[40%]  text-center">
+						<a class="inline-block btn-dark ">GET IN TOUCH</a>
+
+					</div>
+				</div>
+			}
+
+
+
+
+			<div class="w-full bg-black-primary mx-auto relative z-[2] text-white-primary pt-[140px] pb-[40px] ">
+				<div class="w-[90%] max-w-screen-xl xl:w-[100%]   mx-auto">
+					<div class="w-full flex flex-wrap flex-col items-center  items-center justify-between sm:flex-row  sm:border-white-primary/40 sm:border-b-2 sm:pb-[20px] ">
+
+
+						<div class="w-full sm:w-[30%] pb-[20px]  items-center   sm:pb-0 sm:border-none border-white-primary/40 border-b-2 ">
+							<a class="cursor-pointer" asp-page="/Index">
+								<img src="~/assets/shared/desktop/logo-light.png" alt="logo" class="h-[30px] mx-auto sm:mx-0" />
+							</a>
+						</div>
+
+
+						<ul class="w-full sm:w-[60%] lg:w-[40%] text-white-primary flex flex-wrap flex-col justify-between   sm:flex-row items-center gap-4 mt-[20px] sm:mt-0 font-normal text-white-primary text-[15px] tracking-[2px]
+
+									">
+							@foreach (var navLink in navLinks)
+							{
+								<li>
+									<a class="sm:hover:underline" asp-page=@navLink.Link>@navLink.Name</a>
+								</li>
+							}
+						</ul>
+
+
+					</div>
+					<div class="flex flex-col justify-between sm:flex-row flex-wrap gap-6 mt-[40px] items-center">
+						<div class="text-center sm:text-left">
+							<p class="text-[17px] leading-[26px] font-medium text-white-primary">Designo Central Office</p>
+							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">3886 Wellington Street</p>
+							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">Toronto, Ontario M9C 3J5</p>
+						</div>
+						<div class="text-center sm:text-left">
+							<p class="text-[17px] leading-[26px] font-medium text-white-primary">Contact Us (Central Office)</p>
+							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">P : +1 253-863-8967</p>
+							<p class="text-[14px] leading-[26px] font-normal text-white-primary ">M : contact@designo.co</p>
+						</div>
+						<div class="flex flex-row justify-between flex-wrap gap-4 sm:self-end">
+							<a href="/">
+								<img src="~/assets/shared/desktop/icon-facebook.svg" alt="logo" class=" w-[20px]" />
+
+							</a>
+							<a href="/">
+								<img src="~/assets/shared/desktop/icon-youtube.svg" alt="logo" class=" w-[20px]" />
+
+							</a>
+							<a href="/">
+								<img src="~/assets/shared/desktop/icon-twitter.svg" alt="logo" class=" w-[20px]" />
+
+							</a>		<a href="/">
+								<img src="~/assets/shared/desktop/icon-pinterest.svg" alt="logo" class=" w-[20px]" />
+
+							</a>		<a href="/">
+								<img src="~/assets/shared/desktop/icon-instagram.svg" alt="logo" class=" w-[20px]" />
+
+							</a>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</footer>
+	</main>
+
+
+
+
+	<script type="text/javascript">
+		function Menu(e) {
+			let list = document.querySelector('.nav-list');
+			e.name === 'menu' ? (e.name = "close", list.classList.add('left-[0]'), list.classList.add('opacity-100')) : (e.name = "menu", list.classList.remove('left-[0]'), list.classList.remove('opacity-100'))
+		}
+	</script>
 
 
 

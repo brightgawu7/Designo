@@ -6,7 +6,13 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens: {
+                tablet: "768px",
+                desktop: "1024px",
 
+            }
+
+            ,
             colors: {
                 peach: {
                     primary: '#E7816B',
