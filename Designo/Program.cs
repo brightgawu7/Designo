@@ -1,6 +1,12 @@
+using Designo.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<IPageInfoService, PageInfoService>();
+builder.Services.AddScoped<IPageService, PageService>();
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

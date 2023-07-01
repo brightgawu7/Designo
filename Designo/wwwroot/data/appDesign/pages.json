@@ -1,0 +1,14 @@
+[
+    {
+        "Id": 1,
+        "name": "WEB DESIGN",
+        "image": "/assets/home/desktop/image-web-design-small.jpg",
+        "link": "/Designs/Design"
+    },
+    {
+        "Id": 2,
+        "name": "GRAPHIC DESIGN",
+        "image": "/assets/home/desktop/image-graphic-design.jpg",
+        "link": "/Designs/Graphic"
+    }
+]

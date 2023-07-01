@@ -12,76 +12,70 @@
 	}.ToList();
 }
 
-<div class="w-full sm:w-[90%] xl:w-[100%] mx-auto  sm:rounded-[5px] overflow-hidden flex flex-col md:flex-row-reverse flex-wrap  items-center bg-cover bg-center	"
-	 style="background-image:linear-gradient(to left top,rgba(231, 129, 107,0.9) ,rgba(231, 129, 107,0.9	)
-						), url( '/assets/shared/desktop/bg-pattern-call-to-action.svg'); ">
 
-	<img src="~/assets/about/desktop/image-about-hero.jpg" class="w-full md:w-[300px]   " />
-	<div class="w-full md:w-[40%] text-center bg-no-repeat mx-auto md:text-left  ">
-		<div class=" w-[90%] mx-auto py-[30px] md:py-0">
-			<h2 class="text-heading-h2 text-white-primary mb-[20px]">About Us</h2>
-			<p class="text-body-p text-white-primary">Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.</p>
+<div class="w-full bg-peach-primary/90 mx-auto bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')] bg-cover bg-center tablet:rounded-[10px] overflow-hidden pb-[2rem] desktop:pb-[0] grid grid-cols-1 desktop:gap-8 desktop:grid-cols-3 items-center">
+
+	<img src="~/assets/about/desktop/image-about-hero.jpg" class="w-full h-[400px] object-fit desktop:order-last " />
+
+	<div class="w-full  text-center desktop:text-left  mx-auto col-span-2 ">
+		<div class=" w-[90%] tablet:w-[80%] mx-auto">
+			<h2 class="heading-h2 text-white-primary my-[2rem] desktop:mt-0">About Us</h2>
+			<p class="body-p text-white-primary">Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.</p>
 		</div>
 	</div>
 </div>
 
 
-<div class="w-full sm:w-[90%] xl:w-[100%] mx-auto my-[10vh]  sm:rounded-[5px] overflow-hidden flex flex-col sm:flex-row flex-wrap  items-center bg-cover bg-center	"
-	 style="background-image:linear-gradient(to left top,rgba(231, 129, 107,0.4) ,rgba(231, 129, 107,0.4	)
-						), url( '/assets/shared/desktop/bg-pattern-call-to-action.svg'); ">
+<div class="w-full bg-peach-secondary/60 mx-auto bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')] bg-cover bg-center tablet:rounded-[10px] overflow-hidden pb-[2rem] desktop:pb-[0] grid grid-cols-1 desktop:gap-8 desktop:grid-cols-3 items-center tablet:my-[10vh]">
 
-	<img src="~/assets/about/desktop/image-world-class-talent.jpg" class="w-full h-[200px]  md:w-[400px] sm:h-[300px] md:h-[600px]   " />
-	<div class="w-full md:w-[40%] text-center bg-no-repeat mx-auto md:text-left  ">
-		<div class=" w-[90%] mx-auto py-[30px] md:py-0">
-			<h2 class="text-heading-h2 text-peach-primary mb-[20px]">World-class talent</h2>
-			<p class="text-body-p text-black-primary">
-				We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted from concept to launch, ensuring success in its given market. We are constantly updating our skills in a myriad of platforms.
-			</p>
-			<p class="text-body-p text-black-primary mt-[15px]">
-				Our team is multi-disciplinary and we are not merely interested in form — content and meaning are just as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.
-			</p>
+	<img src="~/assets/about/desktop/image-world-class-talent.jpg" class="w-full h-[450px] object-fit " />
+
+	<div class="w-full  text-center desktop:text-left  mx-auto col-span-2 ">
+		<div class=" w-[90%] tablet:w-[80%] mx-auto">
+			<h2 class="heading-h2 text-peach-primary my-[2rem] desktop:mt-0">World-class talent</h2>
+			<p class="body-p text-black-primary mb-[1rem]">We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted from concept to launch, ensuring success in its given market. We are constantly updating our skills in a myriad of platforms.</p>
+
+			<p class="body-p text-black-primary">Our team is multi-disciplinary and we are not merely interested in form — content and meaning are just as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.</p>
 		</div>
 	</div>
 </div>
 
 
-<div class="w-full sm:w-[90%] xl:w-[100%] mx-auto    sm:rounded-[5px] overflow-hidden flex flex-col md:flex-row flex-wrap items-center gap-10 justify-between  ">
-	
-	
-	@foreach(var link in Links)
+
+
+
+
+<div class="w-[90%] tablet:w-full mx-auto    sm:rounded-[5px] overflow-hidden flex flex-col md:flex-row flex-wrap items-center gap-10 justify-between  ">
+
+
+	@foreach (var link in Links)
 	{
 		<div class="w-full md:w-[30%] text-center ">
 			<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
 				<img class="block w-[200px] h-[200px] mx-auto" src=@link.Image />
 			</div>
-			<h3 class="text-heading-h3 text-black-primary text-center my-[30px]">@link.Name</h3>
-			<a class="inline-block  text-white-primary text-[15px] font-medium bg-peach-primary hover:bg-peach-secondary cursor-pointer px-[20px] py-[15px] rounded-[7px]">SEE LOCATION</a>
+			<h3 class="heading-h3 text-black-primary text-center my-[20px]">@link.Name</h3>
+			<a class="light-btn mx-auto">SEE LOCATION</a>
 		</div>
 	}
 
 
 
-	
+
 </div>
 
-<div class="w-full sm:w-[90%] xl:w-[100%] mx-auto mt-[10vh]   sm:rounded-[5px] overflow-hidden flex flex-col sm:flex-row-reverse flex-wrap  items-center bg-cover bg-center	"
-	 style="background-image:linear-gradient(to left top,rgba(231, 129, 107,0.4) ,rgba(231, 129, 107,0.4	)
-						), url( '/assets/shared/desktop/bg-pattern-call-to-action.svg'); ">
 
-	<img src="~/assets/about/desktop/image-real-deal.jpg" class="w-full h-[200px]  md:w-[400px] sm:h-[300px] md:h-[600px]   " />
-	<div class="w-full md:w-[40%] text-center bg-no-repeat mx-auto md:text-left  ">
-		<div class=" w-[90%] mx-auto py-[30px] md:py-0">
-			<h2 class="text-heading-h2 text-peach-primary mb-[20px]">The real deal</h2>
-			<p class="text-body-p text-black-primary">
-				As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.
-			</p>
-			<p class="text-body-p text-black-primary mt-[15px]">
 
-				We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.
-			</p>
+<div class="w-full bg-peach-secondary/60 mx-auto bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')] bg-cover bg-center tablet:rounded-[10px] overflow-hidden pb-[2rem] desktop:pb-[0] grid grid-cols-1 desktop:gap-8 desktop:grid-cols-3 items-center tablet:my-[10vh] mt-[10vh]">
+
+	<img src="~/assets/about/desktop/image-real-deal.jpg" class="w-full h-[450px] object-fit desktop:order-last " />
+
+	<div class="w-full  text-center desktop:text-left  mx-auto col-span-2 ">
+		<div class=" w-[90%] tablet:w-[80%] mx-auto">
+			<h2 class="heading-h2 text-peach-primary my-[2rem] desktop:mt-0">The real deal</h2>
+			<p class="body-p text-black-primary mb-[1rem]">	As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh perspective to every opportunity. We make design and technology more accessible and give you tools to measure success.</p>
+
+			<p class="body-p text-black-primary">			We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies, we inspire audiences to take action and drive real results.</p>
 		</div>
 	</div>
 </div>
-
-
-

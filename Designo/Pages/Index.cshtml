@@ -8,7 +8,7 @@
 
 <div class="w-full tablet:rounded-[5px] bg-peach-primary/90	 bg-[url('/assets/home/desktop/bg-pattern-hero-home.svg')]  bg-no-repeat bg-contain bg-right overflow-hidden flex flex-col flex-wrap desktop:flex-row desktop:justify-between desktop:items-center desktop:px-[5%] ">
 
-	<div class="w-[90%] tablet:w-[80%] desktop:w-[50%]  mx-auto text-center py-[2rem] desktop:text-left	" >
+	<div class="w-[90%] tablet:w-[80%] desktop:w-[50%]  mx-auto text-center py-[2rem] desktop:text-left	">
 		<h3 class=" font-jost font-medium text-[1.8rem] tablet:text-[2.5rem] leading-[2rem] tablet:leading-[3rem] tracking-[0.1rem] text-white-primary">
 			Award-winning custom designs and digital branding solutions
 		</h3>
@@ -22,9 +22,13 @@
 
 
 
+
+
+
+
 <div class="w-[90%] tablet:w-full mx-auto my-[10vh] overflow-hidden grid desktop:grid-rows-2 desktop:grid-cols-2 gap-4 ">
-	<a class="desktop:row-span-2  block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-web-design-small.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/WebDesign">
-	 
+	<a class="desktop:row-span-2  block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-web-design-small.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/Web">
+
 		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] desktop:h-full">
 			<h2 class="heading-h2 text-white-primary">WEB DESIGN</h2>
 			<p class="body-p text-white-primary">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
@@ -32,7 +36,7 @@
 
 	</a>
 
-	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-app-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/AppDesign">
+	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-app-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/App">
 
 		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem]">
 			<h2 class="heading-h2 text-white-primary">APP DESIGN</h2>
@@ -41,9 +45,9 @@
 
 	</a>
 
-	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-graphic-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/GraphicDesign">
+	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-graphic-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/Designs/Graphic">
 
-		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem]">
+		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] text-center">
 			<h2 class="heading-h2 text-white-primary">GRAPHIC DESIGN</h2>
 			<p class="body-p text-white-primary">VIEW PROJECTS <span class="text-peach-primary font-medium">></span></p>
 		</div>
@@ -53,41 +57,40 @@
 
 
 
-<div class="w-[90%] xl:w-[100%] gap-20 mx-auto flex flex-wrap flex-col lg:justify-between lg:gap-0 lg:flex-row ">
 
-	<div class="w-full flex flex-col flex-wrap sm:flex-row lg:flex-col gap-4 lg:w-[30%] ">
+
+
+
+<div class="w-[90%] tablet:w-full mx-auto grid grid-cols-1 gap-12 desktop:grid-cols-3 ">
+
+	<div class="w-full  flex flex-col flex-col tablet:flex-row desktop:flex-col tablet:justify-between tablet:items-center">
 		<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
 			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-passionate.svg" />
 		</div>
-		<div class="text-center  sm:w-[60%] my-auto  lg:w-full  ">
-			<h3 class="text-heading-h3 text-black-primary mb-4">PASSIONATE</h3>
-			<p class="text-body-p text-black-primary">Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.</p>
+		<div class="text-center tablet:text-left tablet:w-[65%] desktop:w-full desktop:text-center">
+			<h3 class="heading-h3 text-black-primary my-[1rem]">PASSIONATE</h3>
+			<p class="body-p text-black-primary">Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.</p>
 		</div>
 	</div>
-	<div class="w-full flex flex-col flex-wrap sm:flex-row lg:flex-col gap-4 lg:w-[30%] ">
+	<div class="w-full  flex flex-col flex-col tablet:flex-row desktop:flex-col tablet:justify-between tablet:items-center">
 		<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
-
 			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-resourceful.svg" />
 		</div>
-		<div class="text-center  sm:w-[60%] my-auto  lg:w-full  ">
-			<h3 class="text-heading-h3 text-black-primary mb-4">RESOURCEFUL</h3>
-			<p class="text-body-p text-black-primary">
-				Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.
-			</p>
+		<div class="text-center tablet:text-left tablet:w-[65%] desktop:w-full desktop:text-center">
+			<h3 class="heading-h3 text-black-primary my-[1rem]">RESOURCEFUL</h3>
+			<p class="body-p text-black-primary">		Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.</p>
 		</div>
 	</div>
-	<div class="w-full flex flex-col flex-wrap sm:flex-row lg:flex-col gap-4 lg:w-[30%] ">
-		<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
 
-			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-friendly.svg" />
+	<div class="w-full  flex flex-col flex-col tablet:flex-row desktop:flex-col tablet:justify-between tablet:items-center">
+		<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
+			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-friendly.svg"  />
 		</div>
-		<div class="text-center  sm:w-[60%] my-auto  lg:w-full  ">
-			<h3 class="text-heading-h3 text-black-primary mb-4">FRIENDLY</h3>
-			<p class="text-body-p text-black-primary">
-		
-				We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.
-			</p>
+		<div class="text-center tablet:text-left tablet:w-[65%] desktop:w-full desktop:text-center">
+			<h3 class="heading-h3 text-black-primary my-[1rem]">FRIENDLY</h3>
+			<p class="body-p text-black-primary">	We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide.</p>
 		</div>
 	</div>
+
 
 </div>
