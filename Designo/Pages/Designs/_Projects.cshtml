@@ -1,6 +1,5 @@
 ﻿
-<div class="w-full tablet:rounded-[5px] overflow-hidden bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')] bg-peach-primary/90 bg-no-repeat bg-cover bg-center py-[3rem]"
->
+<div class="w-full tablet:rounded-[5px] overflow-hidden bg-[url('/assets/shared/desktop/bg-pattern-call-to-action.svg')] bg-peach-primary/90 bg-no-repeat bg-cover bg-center py-[3rem]">
 	<div class="w-[90%] tablet:w-[60%] desktop:w-[50%] mx-auto text-center">
 		<h2 class="heading-h2 text-white-primary">@Model.PageInfo.Name</h2>
 		<p class="body-p text-white-primary mt-[1rem]">@Model.PageInfo.Description</p>
@@ -9,13 +8,13 @@
 
 
 
-<div class="w-[90%] tablet:w-full mx-auto mt-[10vh] flex flex-wrap flex-col tablet:flex-row items-center  gap-24  overflow-hidden">
+<div class="w-[90%] tablet:w-full mx-auto mt-[10vh] flex flex-wrap flex-col tablet:flex-row items-center gap-24 overflow-hidden">
 
 
 
 	@foreach (var project in Model.Projects)
 	{
-		<div class="overflow-hidden w-[320px] desktop:h-[500px] overflow-hidden tablet:w-full desktop:w-[330px] group rounded-[10px] bg-peach-secondary/20 hover:bg-peach-primary cursor-pointer
+		<div class=" overflow-hidden w-[320px] desktop:h-[500px] overflow-hidden tablet:w-full desktop:w-[330px] group rounded-[10px] bg-peach-secondary/20 hover:bg-peach-primary cursor-pointer
 			grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-1 items-center gap-6">
 			<img src=@project.Image class="h-[350px] w-full" />
 
@@ -33,10 +32,13 @@
 
 <div class="w-[90%] tablet:w-full mx-auto mt-[10vh] grid desktop:grid-rows-1 desktop:grid-cols-2 gap-4 ">
 
+	@*	<div class=" bg-[url('/assets/home/desktop/image-web-design-small.jpg')] "></div>
+	<div class=" bg-[url('/assets/home/desktop/image-graphic-design.jpg')] "></div>
+	<div class=" bg-[url('/assets/home/desktop/image-app-design.jpg')] "></div>*@
 
 
-		@foreach (var otherPage in Model.Pages)
-		{
+	@foreach (var otherPage in Model.Pages)
+	{
 		<a class="block overflow-hidden  rounded-[5px]  bg-[url('@otherPage.Image')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="@otherPage.Link">
 
 			<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] text-center">
@@ -45,7 +47,7 @@
 			</div>
 
 		</a>
-		}
+	}
 
 
 

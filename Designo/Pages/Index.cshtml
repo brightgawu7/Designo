@@ -4,7 +4,14 @@
 	ViewData["Title"] = "Home";
 }
 
-
+@if (TempData["success"] != null)
+{
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script type="text/javascript">
+		toastr.success('@TempData["success"]');
+	</script>
+}
 
 <div class="w-full tablet:rounded-[5px] bg-peach-primary/90	 bg-[url('/assets/home/desktop/bg-pattern-hero-home.svg')]  bg-no-repeat bg-contain bg-right overflow-hidden flex flex-col flex-wrap desktop:flex-row desktop:justify-between desktop:items-center desktop:px-[5%] ">
 
@@ -27,7 +34,7 @@
 
 
 <div class="w-[90%] tablet:w-full mx-auto my-[10vh] overflow-hidden grid desktop:grid-rows-2 desktop:grid-cols-2 gap-4 ">
-	<a class="desktop:row-span-2  block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-web-design-small.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/Web">
+	<a class="desktop:row-span-2  block overflow-hidden  rounded-[5px] bg-[url('/assets/home/mobile/image-web-design.jpg')] tablet:bg-[url('/assets/home/tablet/image-web-design.jpg')]   desktop:bg-[url('/assets/home/desktop/image-web-design-small.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/Web">
 
 		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] desktop:h-full">
 			<h2 class="heading-h2 text-white-primary">WEB DESIGN</h2>
@@ -36,7 +43,7 @@
 
 	</a>
 
-	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-app-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/App">
+	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/mobile/image-app-design.jpg')]   tablet:bg-[url('/assets/home/tablet/image-app-design.jpg')]   desktop:bg-[url('/assets/home/desktop/image-app-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="Designs/App">
 
 		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem]">
 			<h2 class="heading-h2 text-white-primary">APP DESIGN</h2>
@@ -45,7 +52,7 @@
 
 	</a>
 
-	<a class="block overflow-hidden  rounded-[5px]  bg-[url('/assets/home/desktop/image-graphic-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/Designs/Graphic">
+	<a class="block overflow-hidden  rounded-[5px] bg-[url('/assets/home/mobile/image-graphic-design.jpg')]  tablet:bg-[url('/assets/home/tablet/image-graphic-design.jpg')]   desktop:bg-[url('/assets/home/desktop/image-graphic-design.jpg')]   bg-no-repeat  bg-cover bg-center object-contain" asp-page="/Designs/Graphic">
 
 		<div class="w-full bg-black-primary/50 hover:bg-peach-primary/70 flex flex-col gap-2 justify-center items-center py-[6rem] text-center">
 			<h2 class="heading-h2 text-white-primary">GRAPHIC DESIGN</h2>
@@ -84,7 +91,7 @@
 
 	<div class="w-full  flex flex-col flex-col tablet:flex-row desktop:flex-col tablet:justify-between tablet:items-center">
 		<div class="bg-no-repeat bg-center bg-[url('/assets/shared/desktop/bg-pattern-small-circle.svg')]">
-			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-friendly.svg"  />
+			<img class="block w-[200px] h-[200px] mx-auto" src="~/assets/home/desktop/illustration-friendly.svg" />
 		</div>
 		<div class="text-center tablet:text-left tablet:w-[65%] desktop:w-full desktop:text-center">
 			<h3 class="heading-h3 text-black-primary my-[1rem]">FRIENDLY</h3>

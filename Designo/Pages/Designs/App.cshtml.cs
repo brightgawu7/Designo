@@ -16,7 +16,6 @@ namespace Designo.Pages.Designs
 		public IEnumerable<Models.Page> Pages { get; set; } = null!;
 
 
-
 		public AppModel(IProjectService projectService, IPageInfoService pageInfoService, IPageService pageService)
 		{
 			_projectService = projectService;
@@ -26,10 +25,12 @@ namespace Designo.Pages.Designs
 
 
 
+
 		public void OnGet()
 		{
 			try
 			{
+																	
 				this.Projects = this._projectService.GetProjects(pageName: "appDesign");
 				this.PageInfo = this._pageInfoService.GetPageInfo(pageName: "appDesign");
 				this.Pages = this._pageService.GetPages(pageName: "appDesign");

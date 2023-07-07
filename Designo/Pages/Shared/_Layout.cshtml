@@ -10,7 +10,16 @@
 
 
 	}.ToList();
+
+	string[] socials = {
+						"/assets/shared/desktop/icon-facebook.svg",
+						"/assets/shared/desktop/icon-youtube.svg",
+						"/assets/shared/desktop/icon-twitter.svg",
+						"/assets/shared/desktop/icon-pinterest.svg",
+						"/assets/shared/desktop/icon-instagram.svg"
+		};
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +28,8 @@
 	<link rel="icon" href="~/assets/favicon-32x32.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Designo ~ @PageName</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
 	<link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -26,10 +37,17 @@
 
 
 </head>
-<body class="w-full">
+
+
+
+
+<body class="w-full   bg-[url('/assets/shared/desktop/bg-pattern-leaf.svg')] ">
+
+
+	<!-- Begin Header  -->
 
 	<header class="w-full bg-white-primary fixed overflow-hidden  z-10">
-		<div class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[80px] flex flex-wrap flex-row justify-between items-center ">
+		<nav class="w-[90%] max-w-screen-largeDesktop mx-auto  h-[80px] flex flex-wrap flex-row justify-between items-center ">
 			<a class="cursor-pointer" asp-page="/Index">
 				<img src="~/assets/shared/desktop/logo-dark.png" alt="logo" class="h-[1.5rem]" />
 			</a>
@@ -50,41 +68,25 @@
 			<div class="text-[30px] cursor-pointer tablet:hidden block">
 				<ion-icon name="menu" onclick="Menu(this)"></ion-icon>
 			</div>
-		</div>
+		</nav>
 	</header>
 
-
-
+	<!-- End Header  -->
+	<!-- Begin Main Body    -->
 
 	<main class="w-full max-w-screen-largeDesktop tablet:w-[90%] pt-[80px]  mx-auto overflow-hidden">
 
 		@RenderBody()
+
 	</main>
 
-
-
-
-
-
-
-
-
-	@*	<main class="w-full">
-	<div class="w-full max-w-screen-xl xl:w-[100%] mx-auto pt-[80px] ">
-
-	@RenderBody()
-
-
-
-	</div>
-	</main>*@
-
-
-
+	<!-- Begin Main Body    -->
+	<!-- Begin Footer -->
 
 	<footer class="w-full">
 
 
+		<!-- Begin Call To Action -->
 		@if (PageName?.ToString() != "Contact")
 		{
 
@@ -108,6 +110,8 @@
 			</div>
 		}
 
+		<!-- End Call To Action -->
+
 
 
 		<div class="w-full relative z-[2]  bg-black-primary mx-auto overflow-hidden pb-[2rem] ">
@@ -115,6 +119,13 @@
 			{
 				<div class="py-[80px]"></div>
 			}
+			else
+			{
+				<div class="py-[20px]"></div>
+
+			}
+
+
 			<div class="w-[90%] max-w-screen-largeDesktop mx-auto">
 
 				<div class="w-full flex flex-wrap flex-col tablet:flex-row items-center justify-between  tablet:border-b-2 border-primary-black/40  py-[1rem] ">
@@ -153,26 +164,15 @@
 					</div>
 
 					<div class="flex flex-row justify-between flex-wrap gap-4 tablet:self-end">
-						<a href="/">
-							<img src="~/assets/shared/desktop/icon-facebook.svg" alt="logo" class="footer-image" />
 
-						</a>
-						<a href="/">
-							<img src="~/assets/shared/desktop/icon-youtube.svg" alt="logo" class=" footer-image" />
+						@foreach (var socail in socials)
+						{
+							<a href="/">
+								<img src=@socail alt="logo" class="footer-image" />
 
-						</a>
-						<a href="/">
-							<img src="~/assets/shared/desktop/icon-twitter.svg" alt="logo" class=" footer-image" />
+							</a>
+						}
 
-						</a>
-						<a href="/">
-							<img src="~/assets/shared/desktop/icon-pinterest.svg" alt="logo" class="footer-image" />
-
-						</a>
-						<a href="/">
-							<img src="~/assets/shared/desktop/icon-instagram.svg" alt="logo" class="footer-image" />
-
-						</a>
 
 					</div>
 
@@ -182,7 +182,7 @@
 		</div>
 	</footer>
 
-
+	<!-- End Footer -->
 
 
 	<script type="text/javascript">
@@ -192,6 +192,7 @@
 		}
 	</script>
 
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
 	@await RenderSectionAsync("Scripts", required: false)

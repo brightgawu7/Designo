@@ -11,11 +11,105 @@
 		new {Name = "UNITED KINGDOM", Image = "/assets/shared/desktop/illustration-united-kingdom.svg"}
 
 	}.ToList();
+
+
+
+	var InvalidName = ViewData["InvalidName"] ?? false;
+	var InvalidEmail = ViewData["InvalidEmail"] ?? false;
+	var InvalidMessage = ViewData["InvalidMessage"] ?? false;
+
+
 }
 
 
-<div class="w-[90%] tablet:w-full mx-auto    sm:rounded-[5px] overflow-hidden flex flex-col md:flex-row flex-wrap items-center gap-10 justify-between my-[10vh]">
+@if (TempData["error"] != null)
+{
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script type="text/javascript">
+		toastr.error('@TempData["error"]');
+	</script>
+}
 
+<div class="w-full tablet:rounded-[5px] bg-peach-primary/90	 bg-[url('/assets/home/desktop/bg-pattern-hero-home.svg')]  bg-no-repeat bg-contain bg-left overflow-hidden mx-auto py-[2rem]">
+
+	<div class="w-[90%] tablet:w-[80%] mx-auto  grid grid-cols-1 desktop:grid-cols-2 gap-8 desktop:gap-16 items-center ">
+		<div class="w-full text-center tablet:text-left">
+			<h2 class="heading-h2 text-white-primary mb-[1rem]">Contact Us</h2>
+			<p class="body-p text-white-primary">Ready to take it to the next level? Let’s talk about your project or idea and find out how we can help your business grow. If you are looking for unique digital experiences that’s relatable to your users, drop us a line.</p>
+		</div>
+		<div class="w-full">
+			<form method="post" class="w-full space-y-6">
+
+
+				<div class="group contact-form-div">
+					<input class="contact-form-input" type="text" placeholder="Name" asp-for="@Model.Contact.Name" />
+
+					<div class="text-right">
+						<span asp-validation-for="@Model.Contact.Name" class="contact-form-error-span"></span>
+						@if ((bool)InvalidName)
+						{
+							<img class="inline w-[15px] " src="/assets/contact/desktop/icon-error.svg" />
+
+						}
+
+					</div>
+				</div>
+
+				<div class="group contact-form-div">
+					<input class="contact-form-input" type="email" placeholder="Email" asp-for="@Model.Contact.Email" />
+					<div class="text-right">
+						<span asp-validation-for="@Model.Contact.Email" class="contact-form-error-span"></span>
+						@if ((bool)InvalidEmail)
+						{
+							<img class="inline w-[15px] " src="/assets/contact/desktop/icon-error.svg" />
+
+						}
+
+					</div>
+				</div>
+
+				<div class="group contact-form-div">
+					<input class="contact-form-input" type="text" placeholder="Phone" asp-for="@Model.Contact.Phone" />
+					<div class="text-right">
+						<span asp-validation-for="@Model.Contact.Phone" class="contact-form-error-span"></span>
+
+			
+
+					</div>
+				</div>
+
+				<div class="group contact-form-div-textarea">
+					<textarea rows="4" placeholder="Your Message" class="contact-form-input" asp-for="@Model.Contact.Message"></textarea>
+					<div class="text-right">
+						<span asp-validation-for="@Model.Contact.Message" class="contact-form-error-span"></span>
+						@if ((bool)InvalidMessage)
+						{
+							<img class="inline w-[15px] " src="/assets/contact/desktop/icon-error.svg" />
+
+						}
+
+					</div>
+
+
+
+
+				</div>
+				<div class="w-full text-center desktop:text-right">
+
+					<button type="submit" class="mx-auto dark-btn">SUBMIT</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+<div class="w-[90%] tablet:w-full mx-auto my-[5vh]   overflow-hidden flex flex-col desktop:flex-row flex-wrap items-center gap-10 justify-between  ">
 
 	@foreach (var link in Links)
 	{
@@ -32,3 +126,10 @@
 
 
 </div>
+
+
+@*@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}*@

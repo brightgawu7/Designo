@@ -48,3 +48,25 @@
 .footer-image {
     @apply w-[20px];
 }
+
+.contact-form-div {
+    @apply w-full border-b-2 border-white-primary/50 grid grid-cols-3 items-center cursor-pointer hover:border-white-primary;
+}
+
+.contact-form-div-textarea {
+    @apply w-full border-b-2 border-white-primary/50 grid grid-cols-1  items-center cursor-pointer hover:border-white-primary gap-2;
+}
+
+
+.contact-form-input {
+    @apply outline-0 focus:outline-0 cursor-pointer placeholder:text-white-primary/70 col-span-2 bg-transparent border-transparent focus:border-transparent focus:ring-0 font-jost text-white-primary text-[0.9rem] font-normal;
+
+}
+
+.contact-form-textarea {
+    @apply cursor-pointer placeholder:text-white-primary/70 col-span-2 bg-transparent border-transparent focus:border-transparent focus:ring-0 font-jost text-white-primary text-[0.9rem] font-normal;
+}
+
+.contact-form-error-span {
+    @apply text-right pr-[0.5rem] font-jost text-[0.7rem] text-white-primary italic tracking-[0.05rem];
+}

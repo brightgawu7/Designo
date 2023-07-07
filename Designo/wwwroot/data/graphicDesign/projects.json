@@ -1,32 +1,21 @@
 [
     {
         "Id": 1,
-        "Name": "AIRFILTER",
-        "Description": "Solving the problem of poor indoor air quality by filtering the air",
-        "Image": "/assets/app-design/desktop/image-airfilter.jpg"
+        "Name": "TIM BROWN",
+        "Description": "A book cover designed for Tim Brown’s new release, ‘Change’",
+        "Image": "/assets/graphic-design/desktop/image-change.jpg"
     },
     {
         "Id": 2,
-        "Name": "EYECAM",
-        "Description": "Product that lets you edit your favorite photos and videos at any time",
-        "Image": "/assets/app-design/desktop/image-eyecam.jpg"
+        "Name": "BOXED WATER",
+        "Description": "A simple packaging concept made for Boxed Water",
+        "Image": "/assets/graphic-design/desktop/image-boxed-water.jpg"
     },
     {
         "Id": 3,
-        "Name": "FACEIT",
-        "Description": "A state-of-the-art music player with high-resolution audio and DSP effects.",
-        "Image": "/assets/web-design/desktop/image-photon.jpg"
-    },
-    {
-        "Id": 4,
-        "Name": "TODO",
-        "Description": "A todo app that features cloud sync with light and dark mode",
-        "Image": "/assets/app-design/desktop/image-todo.jpg"
-    },
-    {
-        "Id": 5,
-        "Name": "LOOPSTUDIOS",
-        "Description": "A VR experience app made for Loopstudios",
-        "Image": "/assets/app-design/desktop/image-loopstudios.jpg"
+        "Name": "SCIENCE!",
+        "Description": "A poster made in collaboration with the Federal Art Project",
+        "Image": "/assets/graphic-design/desktop/image-science.jpg"
     }
+
 ]

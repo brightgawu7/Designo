@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "css:build": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/styles.css --minify"
+        "css:build": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/styles.css --minify",
+        "css:watch": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/styles.css --minify --watch"
     },
     "keywords": [],
     "author": "",
@@ -12,5 +13,8 @@
     "devDependencies": {
         "eslint": "^8.43.0",
         "tailwindcss": "^3.3.2"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.3"
     }
 }
